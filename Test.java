@@ -1,29 +1,75 @@
 class A {
+    
+    // instance variable
+    int x, y;
 
-    // instance variables
-    int a;
-    String b;
-    boolean c;
-
-    // default constructor
-    A () {
-        a = 100;
-        b = "Tyrex";
-        c = true;
+    // parameterized constructor
+    A (int a, int b) {
+        x = a;
+        y = b;
     }
 
-    // methods
-    void Display () {
-        System.out.print(a + " " + b + " " + c);
+    // parameterized constructor
+    A (int a, String str) {
+        System.out.print(a + " " + str);
+    }
+
+    // method
+    void show () {
+        System.out.print(x + " " + y + " ");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        A obj = new A();
-        obj.Display();
+        A s = new A(100, 200);
+        s.show();
+        A reef = new A(1, "tyrex");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class A {
+
+//     // instance variables
+//     int a;
+//     String b;
+//     boolean c;
+
+//     // default constructor
+//     A () {
+//         a = 100;
+//         b = "Tyrex";
+//         c = true;
+//     }
+
+//     // methods
+//     void Display () {
+//         System.out.print(a + " " + b + " " + c);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A obj = new A();
+//         obj.Display();
+//     }
+// }
 
 
 
