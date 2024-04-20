@@ -1,28 +1,72 @@
 class A {
 
-    // instance variable
+    // instance variables
     int a;
-    String name;
+    String b;
+    boolean c;
 
-    // constructor
+    // default constructor
     A () {
-        a = 0;
-        name = null;
+        a = 100;
+        b = "Tyrex";
+        c = true;
     }
 
-    // method
-    void show () {
-        System.out.print(a + " " + name);
+    // methods
+    void Display () {
+        System.out.print(a + " " + b + " " + c);
     }
-
 }
 
 class Test {
     public static void main(String[] args) {
-        A ref = new A();
-        ref.show();
+        A obj = new A();
+        obj.Display();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class A {
+
+//     // instance variable
+//     int a;
+//     String name;
+
+//     // constructor
+//     A () {
+//         a = 0;
+//         name = null;
+//     }
+
+//     // method
+//     void show () {
+//         System.out.print(a + " " + name);
+//     }
+
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A ref = new A();
+//         ref.show();
+//     }
+// }
 
 
 
