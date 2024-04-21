@@ -1,46 +1,63 @@
 class A {
-    
-    // instance variable
-    int x, y;
+    int a;
+    String b;
 
     // parameterized constructor
-    A (int a, int b) {
-        x = a;
-        y = b;
+    A () {
+        a = 10;
+        b = "Learn Coding";
+        System.out.println(a + " " + b);
     }
 
-    // parameterized constructor
-    A (int a, String str) {
-        System.out.print(a + " " + str);
-    }
-
-    // method
-    void show () {
-        System.out.print(x + " " + y + " ");
+    // copy constructor
+    A (A ref) {     // A ref = new A();
+        a = ref.a;
+        b = ref.b;
+        System.out.println(a + " " + b);
     }
 }
 
-class Test {
+/**
+ * Test
+ */
+public class Test {
+
     public static void main(String[] args) {
-        A s = new A(100, 200);
-        s.show();
-        A reef = new A(1, "tyrex");
+        A r = new A();
+        A r2 = new A(r);
     }
 }
 
 
+// class A {
+    
+//     // instance variable
+//     int x, y;
 
+//     // parameterized constructor
+//     A (int a, int b) {
+//         x = a;
+//         y = b;
+//     }
 
+//     // parameterized constructor
+//     A (int a, String str) {
+//         System.out.print(a + " " + str);
+//     }
 
+//     // method
+//     void show () {
+//         System.out.print(x + " " + y + " ");
+//     }
+// }
 
-
-
-
-
-
-
-
-
+// class Test {
+//     public static void main(String[] args) {
+//         A s = new A(100, 200);
+//         s.show();
+//         A reef = new A(1, "tyrex");
+//     }
+// }
 
 
 
@@ -73,21 +90,6 @@ class Test {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // class A {
 
 //     // instance variable
@@ -113,21 +115,6 @@ class Test {
 //         ref.show();
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
