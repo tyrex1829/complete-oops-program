@@ -1,32 +1,51 @@
-class A {
+class Test {
+
     int a;
-    String b;
+    double b;
+    String c;
 
-    // parameterized constructor
-    A () {
+    // private constructor
+    private Test () {
         a = 10;
-        b = "Learn Coding";
-        System.out.println(a + " " + b);
+        b = 30.56;
+        c = "private";
+        System.out.println(a + " " + b + " " + c);
     }
-
-    // copy constructor
-    A (A ref) {     // A ref = new A();
-        a = ref.a;
-        b = ref.b;
-        System.out.println(a + " " + b);
-    }
-}
-
-/**
- * Test
- */
-public class Test {
 
     public static void main(String[] args) {
-        A r = new A();
-        A r2 = new A(r);
+        Test r = new Test();
     }
 }
+
+
+
+// class A {
+//     int a;
+//     String b;
+
+//     // parameterized constructor
+//     A () {
+//         a = 10;
+//         b = "Learn Coding";
+//         System.out.println(a + " " + b);
+//     }
+
+//     // copy constructor
+//     A (A ref) {     // A ref = new A();
+//         a = ref.a;
+//         b = ref.b;
+//         System.out.println(a + " " + b);
+//     }
+// }
+
+// public class Test {
+
+//     public static void main(String[] args) {
+//         A r = new A();
+//         A r2 = new A(r);
+//     }
+// }
+
 
 
 // class A {
