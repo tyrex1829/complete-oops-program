@@ -1,21 +1,55 @@
-class Test {
+class A {
 
-    int a;
-    double b;
-    String c;
+    int x; double z; String y;
 
-    // private constructor
-    private Test () {
-        a = 10;
-        b = 30.56;
-        c = "private";
-        System.out.println(a + " " + b + " " + c);
+    A () {
+        x = 100; z = 55.5; y = "tyrex";
     }
-
-    public static void main(String[] args) {
-        Test r = new Test();
+    A (int a) {
+        x = a;
+    }
+    A (int a, String b) {
+        x = a;
+        y = b;
+    }
+    A (double c) {
+        z = c;
     }
 }
+class Test {
+    public static void main(String[] args) {
+        A r = new A();
+        A r2 = new A(10);
+        A r3 = new A(5, "Constructor Overloading");
+        A r4 = new A(2.5);
+    
+        System.out.println(r.x + " " + r.y + " " + r.z);
+        System.out.println(r2.x);
+        System.out.println(r3.x + " " + r3.y);
+        System.out.println(r4.z);
+    }
+}
+
+
+
+// class Test {
+
+//     int a;
+//     double b;
+//     String c;
+
+//     // private constructor
+//     private Test () {
+//         a = 10;
+//         b = 30.56;
+//         c = "private";
+//         System.out.println(a + " " + b + " " + c);
+//     }
+
+//     public static void main(String[] args) {
+//         Test r = new Test();
+//     }
+// }
 
 
 
