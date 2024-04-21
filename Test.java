@@ -1,24 +1,55 @@
-class Test {
+class A {
 
-    Test () {
-        System.out.println("inside constructor");
+    static void notShow () {
+        System.out.println("inside static method");
+    }
+
+    // method
+    void show () {
+        System.out.println("Inside show method");
+    }
+
+    // default constructor
+    A () {
+        System.out.println("inside default constructor");
     }
 
     // instance block
     {
         System.out.println("inside instance block");
     }
-
-    // static block (here we are not passing static to any method, its just static block)
-    static {
-        System.out.println("Hellooo");
-    }
-
+}
+class Test {
     public static void main(String[] args) {
-       Test r = new Test();
-        
+        A.notShow();
+        A r = new A();
+        r.show();
     }
 }
+
+
+
+// class Test {
+
+//     Test () {
+//         System.out.println("inside constructor");
+//     }
+
+//     // instance block
+//     {
+//         System.out.println("inside instance block");
+//     }
+
+//     // static block (here we are not passing static to any method, its just static block)
+//     static {
+//         System.out.println("Hellooo");
+//     }
+
+//     public static void main(String[] args) {
+//        Test r = new Test();
+        
+//     }
+// }
 
 
 
