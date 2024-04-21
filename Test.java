@@ -1,34 +1,58 @@
-class A {
-
-    int x; double z; String y;
-
-    A () {
-        x = 100; z = 55.5; y = "tyrex";
-    }
-    A (int a) {
-        x = a;
-    }
-    A (int a, String b) {
-        x = a;
-        y = b;
-    }
-    A (double c) {
-        z = c;
-    }
-}
 class Test {
+
+    Test () {
+        System.out.println("inside constructor");
+    }
+
+    // instance block
+    {
+        System.out.println("inside instance block");
+    }
+
+    // static block (here we are not passing static to any method, its just static block)
+    static {
+        System.out.println("Hellooo");
+    }
+
     public static void main(String[] args) {
-        A r = new A();
-        A r2 = new A(10);
-        A r3 = new A(5, "Constructor Overloading");
-        A r4 = new A(2.5);
-    
-        System.out.println(r.x + " " + r.y + " " + r.z);
-        System.out.println(r2.x);
-        System.out.println(r3.x + " " + r3.y);
-        System.out.println(r4.z);
+       Test r = new Test();
+        
     }
 }
+
+
+
+// class A {
+
+//     int x; double z; String y;
+
+//     A () {
+//         x = 100; z = 55.5; y = "tyrex";
+//     }
+//     A (int a) {
+//         x = a;
+//     }
+//     A (int a, String b) {
+//         x = a;
+//         y = b;
+//     }
+//     A (double c) {
+//         z = c;
+//     }
+// }
+// class Test {
+//     public static void main(String[] args) {
+//         A r = new A();
+//         A r2 = new A(10);
+//         A r3 = new A(5, "Constructor Overloading");
+//         A r4 = new A(2.5);
+    
+//         System.out.println(r.x + " " + r.y + " " + r.z);
+//         System.out.println(r2.x);
+//         System.out.println(r3.x + " " + r3.y);
+//         System.out.println(r4.z);
+//     }
+// }
 
 
 
