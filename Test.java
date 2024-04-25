@@ -1,21 +1,49 @@
-class Test {
-    // construtor 
-    Test () {
-        System.out.println("inside constructor");
+class Student { // super
+    // instance variable
+    int roll, marks;
+    String name;
+
+    // method
+    void input () {
+        System.out.print("Enter roll-number, name & marks: ");
     }
-    // static 
-    static {
-        System.out.println("inside static");
+}
+class Test extends Student { // sub
+    // method of sub-class
+    void display () {
+        roll = 1;
+        name = "saksham";
+        marks = 89;
+        System.out.println(roll + ", " + name + ", " + marks);
     }
-    // instance block
-    {
-        System.out.println("inside instance");
+    public static void main(String[] args) {
+        Test s1 = new Test();
+        s1.input();
+        s1.display();
     }
 
-    public static void main(String[] args) {
-        Test ob = new Test(); // need object to access instance block
-    }    
 }
+
+
+
+// class Test {
+//     // construtor 
+//     Test () {
+//         System.out.println("inside constructor");
+//     }
+//     // static 
+//     static {
+//         System.out.println("inside static");
+//     }
+//     // instance block
+//     {
+//         System.out.println("inside instance");
+//     }
+
+//     public static void main(String[] args) {
+//         Test ob = new Test(); // need object to access instance block
+//     }    
+// }
 
 
 
