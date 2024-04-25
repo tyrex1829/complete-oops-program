@@ -1,31 +1,52 @@
-class A {
-
-    static void notShow () {
-        System.out.println("inside static method");
+class Test {
+    // construtor 
+    Test () {
+        System.out.println("inside constructor");
     }
-
-    // method
-    void show () {
-        System.out.println("Inside show method");
+    // static 
+    static {
+        System.out.println("inside static");
     }
-
-    // default constructor
-    A () {
-        System.out.println("inside default constructor");
-    }
-
     // instance block
     {
-        System.out.println("inside instance block");
+        System.out.println("inside instance");
     }
-}
-class Test {
+
     public static void main(String[] args) {
-        A.notShow();
-        A r = new A();
-        r.show();
-    }
+        Test ob = new Test(); // need object to access instance block
+    }    
 }
+
+
+
+// class A {
+//     // static method
+//     static void notShow () {
+//         System.out.println("inside static method");
+//     }
+
+//     // method
+//     void show () {
+//         System.out.println("Inside show method");
+//     }
+
+//     // default constructor
+//     A () {
+//         System.out.println("inside default constructor");
+//     }
+
+//     // instance block
+//     {
+//         System.out.println("inside instance block");
+//     }
+// }
+// class Test {
+//     public static void main(String[] args) {
+//         A.notShow();
+//         A r = new A();
+//         r.show();
+//     }
+// }
 
 
 
