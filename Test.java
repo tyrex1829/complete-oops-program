@@ -1,52 +1,85 @@
-// Super Class
+this keyword
 class A {
-
     // instance variable
-    int a = 10;
-
-    // method
-    void disp(){
-        System.out.println("hello");
-    }
+    int a;
 
     // constructor
     A() {
-        System.out.println("super class constructor");
-    }
-}
-
-// Sub Class
-class B extends A {
-
-    // instance variable
-    int a = 20;
-
-    // method
-    void show () {
-        System.out.println(a);
-        System.out.println(super.a);
-    }
-
-    // method
-    void disp(){
-        super.disp();
-        System.out.println("world");
+        this(10);
+        System.out.println("default constructor");
     }
 
     // constructor
-    B() {
-        System.out.println("sub class constructor");
+    A(int a) { //local variable which is inside bracket (argument)
+        // this();
+        this.a = a;
+    }
+
+    // method
+    void show() {
+        System.out.println(a);
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        B objOfB = new B();
-
-        objOfB.show();
-        objOfB.disp();
+        A objA = new A();
+        objA.show();
+        // System.out.println(objA);
     }
 }
+
+
+
+// // Super Class
+// class A {
+
+//     // instance variable
+//     int a = 10;
+
+//     // method
+//     void disp(){
+//         System.out.println("hello");
+//     }
+
+//     // constructor
+//     A() {
+//         System.out.println("super class constructor");
+//     }
+// }
+
+// // Sub Class
+// class B extends A {
+
+//     // instance variable
+//     int a = 20;
+
+//     // method
+//     void show () {
+//         System.out.println(a);
+//         System.out.println(super.a);
+//     }
+
+//     // method
+//     void disp(){
+//         super.disp();
+//         System.out.println("world");
+//     }
+
+//     // constructor
+//     B() {
+//         System.out.println("sub class constructor");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B objOfB = new B();
+
+//         objOfB.show();
+//         objOfB.disp();
+//     }
+// }
 
 
 
