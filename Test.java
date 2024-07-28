@@ -1,33 +1,72 @@
-// this keyword
+// Method Overloading
 class A {
-    // instance variable
-    int a;
 
-    // constructor
-    A() {
-        this(10);
-        System.out.println("default constructor");
-    }
+    // method
+    void add (){
+        int a = 10;
+        int b = 20;
 
-    // constructor
-    A(int a) { //local variable which is inside bracket (argument)
-        // this();
-        this.a = a;
+        int c = a + b;
+
+        System.out.println(c);
     }
 
     // method
-    void show() {
-        System.out.println(a);
+    void add (int x, int y) {
+        int c = x + y;
+
+        System.out.println(c);
+    }
+
+    // method
+    void add (double x, int y) {
+        double c = x + y;
+
+        System.out.println(c);
     }
 }
 
 class Test {
     public static void main(String[] args) {
         A objA = new A();
-        objA.show();
-        // System.out.println(objA);
+        objA.add();
+        objA.add(5, 5);
+        objA.add(5.5, 5);
     }
 }
+
+
+
+// // this keyword
+// class A {
+//     // instance variable
+//     int a;
+
+//     // constructor
+//     A() {
+//         this(10);
+//         System.out.println("default constructor");
+//     }
+
+//     // constructor
+//     A(int a) { //local variable which is inside bracket (argument)
+//         // this();
+//         this.a = a;
+//     }
+
+//     // method
+//     void show() {
+//         System.out.println(a);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A objA = new A();
+//         objA.show();
+//         // System.out.println(objA);
+//     }
+// }
 
 
 
