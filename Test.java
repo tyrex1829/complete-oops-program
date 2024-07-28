@@ -1,42 +1,94 @@
 // Super Class
 class A {
 
+    // instance variable
+    int a = 10;
+
     // method
-    void Input () {
-        System.out.print("Enter your name : ");
+    void disp(){
+        System.out.println("hello");
+    }
+
+    // constructor
+    A() {
+        System.out.println("super class constructor");
     }
 }
 
-// Sub 1
+// Sub Class
 class B extends A {
 
+    // instance variable
+    int a = 20;
+
     // method
-    void Show () {
-        System.out.println("My name is Tyrex");
+    void show () {
+        System.out.println(a);
+        System.out.println(super.a);
     }
-}
-
-// Sub 2
-class C extends A {
 
     // method
-    void Disp () {
-        System.out.println("My name is Saksham");
+    void disp(){
+        super.disp();
+        System.out.println("world");
+    }
+
+    // constructor
+    B() {
+        System.out.println("sub class constructor");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        B objB = new B();
-        C objC = new C();
+        B objOfB = new B();
 
-        objB.Input();
-        objB.Show();
-
-        objC.Input();
-        objC.Disp();
+        objOfB.show();
+        objOfB.disp();
     }
 }
+
+
+
+// // Super Class
+// class A {
+
+//     // method
+//     void Input () {
+//         System.out.print("Enter your name : ");
+//     }
+// }
+
+// // Sub 1
+// class B extends A {
+
+//     // method
+//     void Show () {
+//         System.out.println("My name is Tyrex");
+//     }
+// }
+
+// // Sub 2
+// class C extends A {
+
+//     // method
+//     void Disp () {
+//         System.out.println("My name is Saksham");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B objB = new B();
+//         C objC = new C();
+
+//         objB.Input();
+//         objB.Show();
+
+//         objC.Input();
+//         objC.Disp();
+//     }
+// }
 
 
 
