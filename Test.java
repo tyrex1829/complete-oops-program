@@ -1,23 +1,9 @@
 // Super Class
 class A {
-    
-    // instance variable
-    int a,b,c;
 
     // method
-    void add(){
-        a = 10;
-        b = 20;
-        c = a + b;
-        System.out.println("Sum of two no: " + c);
-    }
-
-    // method
-    void sub(){
-        a = 100;
-        b = 200;
-        c = a - b;
-        System.out.println("Sub of two no: " + c);
+    void Input () {
+        System.out.print("Enter your name : ");
     }
 }
 
@@ -25,43 +11,101 @@ class A {
 class B extends A {
 
     // method
-    void mul(){
-        a = 10;
-        b = 20;
-        c = a * b;
-        System.out.println("Mul of two no: " + c);
-    }
-
-    // method
-    void div(){
-        a = 10;
-        b = 20;
-        c = a / b;
-        System.out.println("Div of two no: " + c);
+    void Show () {
+        System.out.println("My name is Tyrex");
     }
 }
 
 // Sub 2
-class C extends B {
-    void rem(){
-        a = 10;
-        b = 3;
-        c = a % b;
-        System.out.println("Rem of two no: " + c);
+class C extends A {
+
+    // method
+    void Disp () {
+        System.out.println("My name is Saksham");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        C objOfC = new C();
-        objOfC.add();
-        objOfC.sub();
-        objOfC.mul();
-        objOfC.div();
-        objOfC.rem();
-    }
+        B objB = new B();
+        C objC = new C();
 
+        objB.Input();
+        objB.Show();
+
+        objC.Input();
+        objC.Disp();
+    }
 }
+
+
+
+// Super Class
+// class A {
+    
+//     // instance variable
+//     int a,b,c;
+
+//     // method
+//     void add(){
+//         a = 10;
+//         b = 20;
+//         c = a + b;
+//         System.out.println("Sum of two no: " + c);
+//     }
+
+//     // method
+//     void sub(){
+//         a = 100;
+//         b = 200;
+//         c = a - b;
+//         System.out.println("Sub of two no: " + c);
+//     }
+// }
+
+// // Sub 1
+// class B extends A {
+
+//     // method
+//     void mul(){
+//         a = 10;
+//         b = 20;
+//         c = a * b;
+//         System.out.println("Mul of two no: " + c);
+//     }
+
+//     // method
+//     void div(){
+//         a = 10;
+//         b = 20;
+//         c = a / b;
+//         System.out.println("Div of two no: " + c);
+//     }
+// }
+
+// // Sub 2
+// class C extends B {
+
+//     // method
+//     void rem(){
+//         a = 10;
+//         b = 3;
+//         c = a % b;
+//         System.out.println("Rem of two no: " + c);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         C objOfC = new C();
+//         objOfC.add();
+//         objOfC.sub();
+//         objOfC.mul();
+//         objOfC.div();
+//         objOfC.rem();
+//     }
+
+// }
 
 
 
