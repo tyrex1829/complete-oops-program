@@ -1,28 +1,95 @@
-class Student { // super
+// Super Class
+class A {
+    
     // instance variable
-    int roll, marks;
-    String name;
+    int a,b,c;
 
     // method
-    void input () {
-        System.out.print("Enter roll-number, name & marks: ");
+    void add(){
+        a = 10;
+        b = 20;
+        c = a + b;
+        System.out.println("Sum of two no: " + c);
+    }
+
+    // method
+    void sub(){
+        a = 100;
+        b = 200;
+        c = a - b;
+        System.out.println("Sub of two no: " + c);
     }
 }
-class Test extends Student { // sub
-    // method of sub-class
-    void display () {
-        roll = 1;
-        name = "saksham";
-        marks = 89;
-        System.out.println(roll + ", " + name + ", " + marks);
+
+// Sub 1
+class B extends A {
+
+    // method
+    void mul(){
+        a = 10;
+        b = 20;
+        c = a * b;
+        System.out.println("Mul of two no: " + c);
     }
+
+    // method
+    void div(){
+        a = 10;
+        b = 20;
+        c = a / b;
+        System.out.println("Div of two no: " + c);
+    }
+}
+
+// Sub 2
+class C extends B {
+    void rem(){
+        a = 10;
+        b = 3;
+        c = a % b;
+        System.out.println("Rem of two no: " + c);
+    }
+}
+
+class Test {
     public static void main(String[] args) {
-        Test s1 = new Test();
-        s1.input();
-        s1.display();
+        C objOfC = new C();
+        objOfC.add();
+        objOfC.sub();
+        objOfC.mul();
+        objOfC.div();
+        objOfC.rem();
     }
 
 }
+
+
+
+// class Student { // super
+//     // instance variable
+//     int roll, marks;
+//     String name;
+
+//     // method
+//     void input () {
+//         System.out.print("Enter roll-number, name & marks: ");
+//     }
+// }
+// class Test extends Student { // sub
+//     // method of sub-class
+//     void display () {
+//         roll = 1;
+//         name = "saksham";
+//         marks = 89;
+//         System.out.println(roll + ", " + name + ", " + marks);
+//     }
+//     public static void main(String[] args) {
+//         Test s1 = new Test();
+//         s1.input();
+//         s1.display();
+//     }
+
+// }
 
 
 
