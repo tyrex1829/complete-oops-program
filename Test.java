@@ -1,25 +1,53 @@
-// Method Overriding
-class Shape {
+// Encapsulation
+class A {
 
-    // method
-    void draw () {
-        System.out.println("Can not say shape type");
+    // private class variable
+    private int value; // data hiding
+
+    // public method , with this we will set our value.
+    public void setValue (int x) { //data abstraction
+        value = x;
     }
-}
 
-class Square extends Shape {
-    @Override
-    void draw () {
-        System.out.println("Shape is square");
+    // public method , with this we will get our value.
+    public int getValue () {
+        return value;
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        Shape objSquare = new Square();
-        objSquare.draw();
+        A r = new A();
+
+        r.setValue(10);
+        System.out.println(r.getValue());
     }
 }
+
+
+
+// Method Overriding
+// class Shape {
+
+//     // method
+//     void draw () {
+//         System.out.println("Can not say shape type");
+//     }
+// }
+
+// class Square extends Shape {
+//     @Override
+//     void draw () {
+//         System.out.println("Shape is square");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         Shape objSquare = new Square();
+//         objSquare.draw();
+//     }
+// }
 
 
 
