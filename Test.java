@@ -1,39 +1,64 @@
-// Method Overloading
-class A {
+// Method Overriding
+class Shape {
 
     // method
-    void add (){
-        int a = 10;
-        int b = 20;
-
-        int c = a + b;
-
-        System.out.println(c);
+    void draw () {
+        System.out.println("Can not say shape type");
     }
+}
 
-    // method
-    void add (int x, int y) {
-        int c = x + y;
-
-        System.out.println(c);
-    }
-
-    // method
-    void add (double x, int y) {
-        double c = x + y;
-
-        System.out.println(c);
+class Square extends Shape {
+    @Override
+    void draw () {
+        System.out.println("Shape is square");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        A objA = new A();
-        objA.add();
-        objA.add(5, 5);
-        objA.add(5.5, 5);
+        Shape objSquare = new Square();
+        objSquare.draw();
     }
 }
+
+
+
+// Method Overloading
+// class A {
+
+//     // method
+//     void add (){
+//         int a = 10;
+//         int b = 20;
+
+//         int c = a + b;
+
+//         System.out.println(c);
+//     }
+
+//     // method
+//     void add (int x, int y) {
+//         int c = x + y;
+
+//         System.out.println(c);
+//     }
+
+//     // method
+//     void add (double x, int y) {
+//         double c = x + y;
+
+//         System.out.println(c);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A objA = new A();
+//         objA.add();
+//         objA.add(5, 5);
+//         objA.add(5.5, 5);
+//     }
+// }
 
 
 
