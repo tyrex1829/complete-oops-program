@@ -1,46 +1,91 @@
-// abstract method program
-abstract class Programming {
-    public abstract void Developer ();
-    public abstract void Rank ();
+// Interface Intro
+// interface
+
+import java.util.Scanner;
+
+interface Client {
+
+    // method
+    void input();      //public + abstract
+    void output();     //public + abstract
 }
 
-class HTML extends Programming {
-    @Override
-    public void Developer () {
-        System.out.println("Tim Berners Lee");
+class Dev1 implements Client {
+
+    // variable
+    String name;
+    double salary;
+
+    // method
+    public void input () {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter username : ");
+        name = sc.nextLine();
+
+        System.out.print("Enter salary : ");
+        salary = sc.nextDouble();
     }
 
-    // two abs method are there in above class, so we have to override both other wise this class will also become abs class.
-    @Override
-    public void Rank () {
-        System.out.println("Rank: " + 3);
-    }
-}
-
-class Java extends Programming {
-    @Override
-    public void Developer () {
-        System.out.println("James Gosling");
-    }
-
-    @Override
-    public void Rank () {
-        System.out.println("Rank: " + 5);
+    public void output () {
+        System.out.println(name + " is earning Rupees: " + salary);
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        HTML d1 = new HTML();
-        Java d2 = new Java();
+        Client c = new Dev1();
 
-        d1.Developer();
-        d2.Developer();
-
-        d1.Rank();
-        d2.Rank();
+        c.input();
+        c.output();
     }
 }
+
+
+
+// abstract method program
+// abstract class Programming {
+//     public abstract void Developer ();
+//     public abstract void Rank ();
+// }
+
+// class HTML extends Programming {
+//     @Override
+//     public void Developer () {
+//         System.out.println("Tim Berners Lee");
+//     }
+
+//     // two abs method are there in above class, so we have to override both other wise this class will also become abs class.
+//     @Override
+//     public void Rank () {
+//         System.out.println("Rank: " + 3);
+//     }
+// }
+
+// class Java extends Programming {
+//     @Override
+//     public void Developer () {
+//         System.out.println("James Gosling");
+//     }
+
+//     @Override
+//     public void Rank () {
+//         System.out.println("Rank: " + 5);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         HTML d1 = new HTML();
+//         Java d2 = new Java();
+
+//         d1.Developer();
+//         d2.Developer();
+
+//         d1.Rank();
+//         d2.Rank();
+//     }
+// }
 
 
 
