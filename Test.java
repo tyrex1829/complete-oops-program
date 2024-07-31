@@ -1,45 +1,71 @@
-// Interface Intro
-// interface
+// Interface Variables
+interface customerJohn {
 
-import java.util.Scanner;
-
-interface Client {
-
+    // variables
+    int quantity = 5;    // public + static + final
+    
     // method
-    void input();      //public + abstract
-    void output();     //public + abstract
+    void purchase ();
 }
 
-class Dev1 implements Client {
+class sellerMuh implements customerJohn {
 
-    // variable
-    String name;
-    double salary;
-
-    // method
-    public void input () {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter username : ");
-        name = sc.nextLine();
-
-        System.out.print("Enter salary : ");
-        salary = sc.nextDouble();
-    }
-
-    public void output () {
-        System.out.println(name + " is earning Rupees: " + salary);
+    @Override
+    public void purchase () {
+        System.out.println("John wanna buy " + quantity + " Kg rice");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        Client c = new Dev1();
+        customerJohn c = new sellerMuh();
 
-        c.input();
-        c.output();
+        c.purchase();
     }
 }
+
+
+
+// Interface Intro
+// import java.util.Scanner;
+// interface
+// interface Client {
+
+//     // method
+//     void input();      //public + abstract
+//     void output();     //public + abstract
+// }
+
+// class Dev1 implements Client {
+
+//     // variable
+//     String name;
+//     double salary;
+
+//     // method
+//     public void input () {
+//         Scanner sc = new Scanner(System.in);
+
+//         System.out.print("Enter username : ");
+//         name = sc.nextLine();
+
+//         System.out.print("Enter salary : ");
+//         salary = sc.nextDouble();
+//     }
+
+//     public void output () {
+//         System.out.println(name + " is earning Rupees: " + salary);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         Client c = new Dev1();
+
+//         c.input();
+//         c.output();
+//     }
+// }
 
 
 
