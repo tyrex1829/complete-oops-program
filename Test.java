@@ -1,22 +1,74 @@
-// abstract class
-abstract class A {
+// abstract class program
+abstract class Animal {
+
+    // constructor
+    Animal(String a) {
+        System.out.println("All " + a);
+    }
+
+    // abstract method
+    public abstract void sound();
+}
+
+// there is something common between dog and lion like eat, now we have to make eat method on both classes, but if we make animal class which will abstract and will contain an empty eat abstract method will solve our problem.
+
+class Dog extends Animal {
+
+    // constructor
+    Dog() {
+        super("Dog");
+    }
+
     // method
-    void disp () {
-        System.out.println("hello");
+    public void sound() {
+        System.out.println("bark");
     }
 }
 
-class B extends A {
+class Lion extends Animal {
 
+    // constructor
+    Lion () {
+        super("Lion");
+    }
+
+    // method
+    public void sound () {
+        System.out.println("roar");
+    }
 }
 
 class Test {
     public static void main(String[] args) {
-        // A r = new A();    will not work because can't create obj od abs class.
-        A r = new B(); // made obj of B, and B extends A, so can access members of A.
-        r.disp();
+        Dog r1 = new Dog();
+        Lion r2 = new Lion();
+
+        r1.sound();
+        r2.sound();
     }
 }
+
+
+
+// abstract class
+// abstract class A {
+//     // method
+//     void disp () {
+//         System.out.println("hello");
+//     }
+// }
+
+// class B extends A {
+
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         // A r = new A();    will not work because can't create obj od abs class.
+//         A r = new B(); // made obj of B, and B extends A, so can access members of A.
+//         r.disp();
+//     }
+// }
 
 
 
