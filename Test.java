@@ -1,28 +1,50 @@
-// Encapsulation
-class A {
-
-    // private class variable
-    private int value; // data hiding
-
-    // public method , with this we will set our value.
-    public void setValue (int x) { //data abstraction
-        value = x;
+// abstract class
+abstract class A {
+    // method
+    void disp () {
+        System.out.println("hello");
     }
+}
 
-    // public method , with this we will get our value.
-    public int getValue () {
-        return value;
-    }
+class B extends A {
+
 }
 
 class Test {
     public static void main(String[] args) {
-        A r = new A();
-
-        r.setValue(10);
-        System.out.println(r.getValue());
+        // A r = new A();    will not work because can't create obj od abs class.
+        A r = new B(); // made obj of B, and B extends A, so can access members of A.
+        r.disp();
     }
 }
+
+
+
+// Encapsulation
+// class A {
+
+//     // private class variable
+//     private int value; // data hiding
+
+//     // public method , with this we will set our value.
+//     public void setValue (int x) { //data abstraction
+//         value = x;
+//     }
+
+//     // public method , with this we will get our value.
+//     public int getValue () {
+//         return value;
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A r = new A();
+
+//         r.setValue(10);
+//         System.out.println(r.getValue());
+//     }
+// }
 
 
 
