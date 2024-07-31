@@ -1,25 +1,60 @@
-// Multiple inheritance through interfaces
-interface A {
-
-    // method
-    void show ();
+// Extending Interface
+interface Gill {
+    void add();
 }
 
-interface B {
-    void show ();
+interface Raj extends Gill {
+    void sub();
 }
 
-class Test implements A, B{
-
-    // method
-    public void show () {
-        System.out.println("implementing both A and B");
+class Ankit implements Raj {
+    @Override
+    public void add () {
+        int a = 10, b = 20, c;
+        c = a + b;
+        System.out.println("addition: " + c);
     }
+
+    @Override
+    public void sub () {
+        int a = 20, b = 10, c;
+        c = a - b;
+        System.out.println("Subtraction: " + c);
+    }
+}
+
+class Test {
     public static void main(String[] args) {
-        Test m = new Test();
-        m.show();
+        Raj r = new Ankit();
+        r.add();
+        r.sub();
     }
 }
+
+
+
+// Multiple inheritance through interfaces
+// interface A {
+
+//     // method
+//     void show ();
+// }
+
+// interface B {
+//     void show ();
+// }
+
+// class Test implements A, B{
+
+//     // method
+//     public void show () {
+//         System.out.println("implementing both A and B");
+//     }
+//     public static void main(String[] args) {
+//         Test m = new Test();
+//         m.show();
+//     }
+// }
 
 
 
