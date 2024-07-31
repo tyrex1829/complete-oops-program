@@ -1,52 +1,98 @@
-// abstract class program
-abstract class Animal {
-
-    // constructor
-    Animal(String a) {
-        System.out.println("All " + a);
-    }
-
-    // abstract method
-    public abstract void sound();
+// abstract method program
+abstract class Programming {
+    public abstract void Developer ();
+    public abstract void Rank ();
 }
 
-// there is something common between dog and lion like eat, now we have to make eat method on both classes, but if we make animal class which will abstract and will contain an empty eat abstract method will solve our problem.
-
-class Dog extends Animal {
-
-    // constructor
-    Dog() {
-        super("Dog");
+class HTML extends Programming {
+    @Override
+    public void Developer () {
+        System.out.println("Tim Berners Lee");
     }
 
-    // method
-    public void sound() {
-        System.out.println("bark");
+    // two abs method are there in above class, so we have to override both other wise this class will also become abs class.
+    @Override
+    public void Rank () {
+        System.out.println("Rank: " + 3);
     }
 }
 
-class Lion extends Animal {
-
-    // constructor
-    Lion () {
-        super("Lion");
+class Java extends Programming {
+    @Override
+    public void Developer () {
+        System.out.println("James Gosling");
     }
 
-    // method
-    public void sound () {
-        System.out.println("roar");
+    @Override
+    public void Rank () {
+        System.out.println("Rank: " + 5);
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        Dog r1 = new Dog();
-        Lion r2 = new Lion();
+        HTML d1 = new HTML();
+        Java d2 = new Java();
 
-        r1.sound();
-        r2.sound();
+        d1.Developer();
+        d2.Developer();
+
+        d1.Rank();
+        d2.Rank();
     }
 }
+
+
+
+// abstract class program
+// abstract class Animal {
+
+//     // constructor
+//     Animal(String a) {
+//         System.out.println("All " + a);
+//     }
+
+//     // abstract method
+//     public abstract void sound();
+// }
+
+// // there is something common between dog and lion like eat, now we have to make eat method on both classes, but if we make animal class which will abstract and will contain an empty eat abstract method will solve our problem.
+
+// class Dog extends Animal {
+
+//     // constructor
+//     Dog() {
+//         super("Dog");
+//     }
+
+//     // method
+//     public void sound() {
+//         System.out.println("bark");
+//     }
+// }
+
+// class Lion extends Animal {
+
+//     // constructor
+//     Lion () {
+//         super("Lion");
+//     }
+
+//     // method
+//     public void sound () {
+//         System.out.println("roar");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         Dog r1 = new Dog();
+//         Lion r2 = new Lion();
+
+//         r1.sound();
+//         r2.sound();
+//     }
+// }
 
 
 
