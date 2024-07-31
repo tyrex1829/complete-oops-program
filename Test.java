@@ -1,36 +1,61 @@
-// Interface Methods
-interface Client {
+// Multiple inheritance through interfaces
+interface A {
 
     // method
-    void webDesign (); // public + abstract
-    void webDeveloper (); // public + abstract
+    void show ();
 }
 
-abstract class JohnTech implements Client {
-    
+interface B {
+    void show ();
+}
+
+class Test implements A, B{
+
     // method
-    @Override
-    public void webDesign () {
-        System.out.println("green, top menu, hamburger button");
+    public void show () {
+        System.out.println("implementing both A and B");
     }
-    // now after designing he does not want to continue his work, he left. i.e. develop method didn't get called, and if any method of interface didn't get called then this class will become abstract class. so write abstract before this class.
-}
-
-class VakoTech extends JohnTech {
-
-    // method
-    public void webDeveloper () {
-        System.out.println("React, Nodejs, express, MongoDB, Auth");
-    }
-}
-
-class Test {
     public static void main(String[] args) {
-        VakoTech r = new VakoTech();
-        r.webDesign();
-        r.webDeveloper();
+        Test m = new Test();
+        m.show();
     }
 }
+
+
+
+// Interface Methods
+// interface Client {
+
+//     // method
+//     void webDesign (); // public + abstract
+//     void webDeveloper (); // public + abstract
+// }
+
+// abstract class JohnTech implements Client {
+    
+//     // method
+//     @Override
+//     public void webDesign () {
+//         System.out.println("green, top menu, hamburger button");
+//     }
+//     // now after designing he does not want to continue his work, he left. i.e. develop method didn't get called, and if any method of interface didn't get called then this class will become abstract class. so write abstract before this class.
+// }
+
+// class VakoTech extends JohnTech {
+
+//     // method
+//     public void webDeveloper () {
+//         System.out.println("React, Nodejs, express, MongoDB, Auth");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         VakoTech r = new VakoTech();
+//         r.webDesign();
+//         r.webDeveloper();
+//     }
+// }
 
 
 
