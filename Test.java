@@ -1,28 +1,64 @@
-// Interface Variables
-interface customerJohn {
+// Interface Methods
+interface Client {
 
-    // variables
-    int quantity = 5;    // public + static + final
-    
     // method
-    void purchase ();
+    void webDesign (); // public + abstract
+    void webDeveloper (); // public + abstract
 }
 
-class sellerMuh implements customerJohn {
-
+abstract class JohnTech implements Client {
+    
+    // method
     @Override
-    public void purchase () {
-        System.out.println("John wanna buy " + quantity + " Kg rice");
+    public void webDesign () {
+        System.out.println("green, top menu, hamburger button");
+    }
+    // now after designing he does not want to continue his work, he left. i.e. develop method didn't get called, and if any method of interface didn't get called then this class will become abstract class. so write abstract before this class.
+}
+
+class VakoTech extends JohnTech {
+
+    // method
+    public void webDeveloper () {
+        System.out.println("React, Nodejs, express, MongoDB, Auth");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        customerJohn c = new sellerMuh();
-
-        c.purchase();
+        VakoTech r = new VakoTech();
+        r.webDesign();
+        r.webDeveloper();
     }
 }
+
+
+
+// Interface Variables
+// interface customerJohn {
+
+//     // variables
+//     int quantity = 5;    // public + static + final
+    
+//     // method
+//     void purchase ();
+// }
+
+// class sellerMuh implements customerJohn {
+
+//     @Override
+//     public void purchase () {
+//         System.out.println("John wanna buy " + quantity + " Kg rice");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         customerJohn c = new sellerMuh();
+
+//         c.purchase();
+//     }
+// }
 
 
 
