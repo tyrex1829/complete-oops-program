@@ -1,25 +1,48 @@
-// var-arg method
-class A {
-    void add (int ... a) { // same as spread operator in js
-        int sum = 0;
-        // sum = sum + a; // this will give error, because a is array, now need to traverse.
-        for (int x:a) {
-            sum += x;
+// Exception Handling
+class Test {
+    public static void main(String[] args) {
+
+        System.out.println("main method started");
+
+        int a = 10, b = 0;
+        int c;
+        try {
+            c = a / b;
+            System.out.println(c);
+        } catch (Exception e) {
+            // System.out.println(e);
+            System.out.println("can't divide by 0");
         }
-        System.out.println("Sum of no. is: " + sum);
+       
+
+        System.out.println("main method ended");
     }
 }
 
-class Test {
-    public static void main(String[] args) {
-        A a = new A();
-        a.add();
-        a.add(10);
-        a.add(20, 30);
-        a.add(40, 50, 60);
-        a.add(70, 80, 90, 100);
-    }
-}
+
+
+// var-arg method
+// class A {
+//     void add (int ... a) { // same as spread operator in js
+//         int sum = 0;
+//         // sum = sum + a; // this will give error, because a is array, now need to traverse.
+//         for (int x:a) {
+//             sum += x;
+//         }
+//         System.out.println("Sum of no. is: " + sum);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A a = new A();
+//         a.add();
+//         a.add(10);
+//         a.add(20, 30);
+//         a.add(40, 50, 60);
+//         a.add(70, 80, 90, 100);
+//     }
+// }
 
 
 
