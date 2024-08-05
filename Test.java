@@ -1,24 +1,66 @@
-// Interface Static Method (JDK 1.8)
+// Interface Private Method (JDK 1.9)
 interface A {
-    public static void show () {
-        System.out.println("cannot override interface static methods");
+
+    // 1st way
+    default void call () {
+        add(10, 20);
+    }
+
+    // 2nd way, but this will only work if private method is also static
+    public static void call2 () {
+        add(5, 5);
+    }
+
+    // private method, need to implememt this method in this interface only.
+    private static void add (int x, int y) {
+        System.out.println("Sum of two no: " + (x+y));
     }
 }
 
-// class Demo implements A {
-//     @Override
-//     public static void show () {
-//         System.out.println("this will throw an error because we can't override static method present inside an interface");
-//     }
-// }
+class B implements A {
+
+    // public method (it's own method)
+    public void sub (int x, int y) {
+        System.out.println("Sub of two no: " + (x-y));
+    }
+}
 
 class Test {
     public static void main(String[] args) {
-        A.show();
-        // Demo d = new Demo();
-        // d.show();
+        B b = new B();
+        // b.add(5, 10); // error because add is private // To solve this, 2 ways, 1st => default method, 2nd => static method
+
+        // 1st way
+        b.call();
+        A.call2(); // interface call
+
+        b.sub(10, 5);
     }
 }
+
+
+
+// Interface Static Method (JDK 1.8)
+// interface A {
+//     public static void show () {
+//         System.out.println("cannot override interface static methods");
+//     }
+// }
+
+// // class Demo implements A {
+// //     @Override
+// //     public static void show () {
+// //         System.out.println("this will throw an error because we can't override static method present inside an interface");
+// //     }
+// // }
+
+// class Test {
+//     public static void main(String[] args) {
+//         A.show();
+//         // Demo d = new Demo();
+//         // d.show();
+//     }
+// }
 
 
 
