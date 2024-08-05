@@ -1,76 +1,100 @@
-// Interface Default Method (JDK 1.8)
+// Interface Static Method (JDK 1.8)
 interface A {
-    void a1 (); // Public + abstract
-    void a2 (); // Public + abstract
-
-    // later
-    default void a3 () { // not abstract
-        System.out.println("a3 of A");
-    };
-}
-
-class B implements A {
-
-    // implementation
-    public void a1 () {
-        System.out.println("a1 of B");
-    }
-
-    // implementation
-    public void a2 () {
-        System.out.println("a2 of B");
-    }
-
-    // implementation a3 in B only not in C & D, B will Override
-    public void a3 () {
-        System.out.println("a3 of B");
+    public static void show () {
+        System.out.println("cannot override interface static methods");
     }
 }
 
-class C implements A {
-
-    // implementation
-    public void a1 () {
-        System.out.println("a1 of C");
-    }
-
-    // implementation
-    public void a2 () {
-        System.out.println("a2 of C");
-    }
-}
-
-class D implements A {
-
-    // implementation
-    public void a1 () {
-        System.out.println("a1 of D");
-    }
-
-    // implementation
-    public void a2 () {
-        System.out.println("a2 of D");
-    }
-}
+// class Demo implements A {
+//     @Override
+//     public static void show () {
+//         System.out.println("this will throw an error because we can't override static method present inside an interface");
+//     }
+// }
 
 class Test {
     public static void main(String[] args) {
-        B b = new B();
-        b.a1();
-        b.a2();
-        b.a3();
-
-        C c = new C();
-        c.a1();
-        c.a2();
-        c.a3();
-        
-        D d = new D();
-        d.a1();
-        d.a2();
-        c.a3();
+        A.show();
+        // Demo d = new Demo();
+        // d.show();
     }
 }
+
+
+
+// Interface Default Method (JDK 1.8)
+// interface A {
+//     void a1 (); // Public + abstract
+//     void a2 (); // Public + abstract
+
+//     // later
+//     default void a3 () { // not abstract
+//         System.out.println("a3 of A");
+//     };
+// }
+
+// class B implements A {
+
+//     // implementation
+//     public void a1 () {
+//         System.out.println("a1 of B");
+//     }
+
+//     // implementation
+//     public void a2 () {
+//         System.out.println("a2 of B");
+//     }
+
+//     // implementation a3 in B only not in C & D, B will Override
+//     public void a3 () {
+//         System.out.println("a3 of B");
+//     }
+// }
+
+// class C implements A {
+
+//     // implementation
+//     public void a1 () {
+//         System.out.println("a1 of C");
+//     }
+
+//     // implementation
+//     public void a2 () {
+//         System.out.println("a2 of C");
+//     }
+// }
+
+// class D implements A {
+
+//     // implementation
+//     public void a1 () {
+//         System.out.println("a1 of D");
+//     }
+
+//     // implementation
+//     public void a2 () {
+//         System.out.println("a2 of D");
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B b = new B();
+//         b.a1();
+//         b.a2();
+//         b.a3();
+
+//         C c = new C();
+//         c.a1();
+//         c.a2();
+//         c.a3();
+        
+//         D d = new D();
+//         d.a1();
+//         d.a2();
+//         c.a3();
+//     }
+// }
 
 
 
