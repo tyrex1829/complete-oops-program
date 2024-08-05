@@ -1,35 +1,111 @@
-// Extending Interface
-interface Gill {
-    void add();
+// Interface Default Method (JDK 1.8)
+interface A {
+    void a1 (); // Public + abstract
+    void a2 (); // Public + abstract
+
+    // later
+    default void a3 () { // not abstract
+        System.out.println("a3 of A");
+    };
 }
 
-interface Raj extends Gill {
-    void sub();
-}
+class B implements A {
 
-class Ankit implements Raj {
-    @Override
-    public void add () {
-        int a = 10, b = 20, c;
-        c = a + b;
-        System.out.println("addition: " + c);
+    // implementation
+    public void a1 () {
+        System.out.println("a1 of B");
     }
 
-    @Override
-    public void sub () {
-        int a = 20, b = 10, c;
-        c = a - b;
-        System.out.println("Subtraction: " + c);
+    // implementation
+    public void a2 () {
+        System.out.println("a2 of B");
+    }
+
+    // implementation a3 in B only not in C & D, B will Override
+    public void a3 () {
+        System.out.println("a3 of B");
+    }
+}
+
+class C implements A {
+
+    // implementation
+    public void a1 () {
+        System.out.println("a1 of C");
+    }
+
+    // implementation
+    public void a2 () {
+        System.out.println("a2 of C");
+    }
+}
+
+class D implements A {
+
+    // implementation
+    public void a1 () {
+        System.out.println("a1 of D");
+    }
+
+    // implementation
+    public void a2 () {
+        System.out.println("a2 of D");
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        Raj r = new Ankit();
-        r.add();
-        r.sub();
+        B b = new B();
+        b.a1();
+        b.a2();
+        b.a3();
+
+        C c = new C();
+        c.a1();
+        c.a2();
+        c.a3();
+        
+        D d = new D();
+        d.a1();
+        d.a2();
+        c.a3();
     }
 }
+
+
+
+// Extending Interface
+// interface Gill {
+//     void add();
+// }
+
+// interface Raj extends Gill {
+//     void sub();
+// }
+
+// class Ankit implements Raj {
+//     @Override
+//     public void add () {
+//         int a = 10, b = 20, c;
+//         c = a + b;
+//         System.out.println("addition: " + c);
+//     }
+
+//     @Override
+//     public void sub () {
+//         int a = 20, b = 10, c;
+//         c = a - b;
+//         System.out.println("Subtraction: " + c);
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         Raj r = new Ankit();
+//         r.add();
+//         r.sub();
+//     }
+// }
 
 
 
