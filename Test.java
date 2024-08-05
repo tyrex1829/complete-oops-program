@@ -1,25 +1,21 @@
-// Overriden Annotation
+// Covarient Return Type 
 class A {
 
-    // method
-    void Show () {
+    // Method has class type -> return type
+    A Show () { // class type -> return type
         System.out.println("Super Class");
+        return this; // we have to return something because not void. this --> new A();
     }
 }
 
 class B extends A {
 
-    // Override method
+    // override method
     @Override
-    void Show () {
+    B Show () {
         System.out.println("Sub Class");
+        return this;
     }
-
-    // Override Method, but this method is not present at A. So give error if override tag is used, if not used override tag then no error.
-    // @Override
-    // void Disp () {
-    //     System.out.println("error");
-    // }
 }
 
 class Test {
@@ -28,6 +24,39 @@ class Test {
         b.Show();
     }
 }
+
+
+
+// Overriden Annotation
+// class A {
+
+//     // method
+//     void Show () {
+//         System.out.println("Super Class");
+//     }
+// }
+
+// class B extends A {
+
+//     // Override method
+//     @Override
+//     void Show () {
+//         System.out.println("Sub Class");
+//     }
+
+//     // Override Method, but this method is not present at A. So give error if override tag is used, if not used override tag then no error.
+//     // @Override
+//     // void Disp () {
+//     //     System.out.println("error");
+//     // }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B b = new B();
+//         b.Show();
+//     }
+// }
 
 
 
