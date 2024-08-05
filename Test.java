@@ -1,42 +1,75 @@
-// Interface Private Method (JDK 1.9)
-interface A {
+// Overriden Annotation
+class A {
 
-    // 1st way
-    default void call () {
-        add(10, 20);
-    }
-
-    // 2nd way, but this will only work if private method is also static
-    public static void call2 () {
-        add(5, 5);
-    }
-
-    // private method, need to implememt this method in this interface only.
-    private static void add (int x, int y) {
-        System.out.println("Sum of two no: " + (x+y));
+    // method
+    void Show () {
+        System.out.println("Super Class");
     }
 }
 
-class B implements A {
+class B extends A {
 
-    // public method (it's own method)
-    public void sub (int x, int y) {
-        System.out.println("Sub of two no: " + (x-y));
+    // Override method
+    @Override
+    void Show () {
+        System.out.println("Sub Class");
     }
+
+    // Override Method, but this method is not present at A. So give error if override tag is used, if not used override tag then no error.
+    // @Override
+    // void Disp () {
+    //     System.out.println("error");
+    // }
 }
 
 class Test {
     public static void main(String[] args) {
         B b = new B();
-        // b.add(5, 10); // error because add is private // To solve this, 2 ways, 1st => default method, 2nd => static method
-
-        // 1st way
-        b.call();
-        A.call2(); // interface call
-
-        b.sub(10, 5);
+        b.Show();
     }
 }
+
+
+
+// Interface Private Method (JDK 1.9)
+// interface A {
+
+//     // 1st way
+//     default void call () {
+//         add(10, 20);
+//     }
+
+//     // 2nd way, but this will only work if private method is also static
+//     public static void call2 () {
+//         add(5, 5);
+//     }
+
+//     // private method, need to implememt this method in this interface only.
+//     private static void add (int x, int y) {
+//         System.out.println("Sum of two no: " + (x+y));
+//     }
+// }
+
+// class B implements A {
+
+//     // public method (it's own method)
+//     public void sub (int x, int y) {
+//         System.out.println("Sub of two no: " + (x-y));
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B b = new B();
+//         // b.add(5, 10); // error because add is private // To solve this, 2 ways, 1st => default method, 2nd => static method
+
+//         // 1st way
+//         b.call();
+//         A.call2(); // interface call
+
+//         b.sub(10, 5);
+//     }
+// }
 
 
 
