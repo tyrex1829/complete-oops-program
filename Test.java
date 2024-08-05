@@ -1,29 +1,54 @@
-// Covarient Return Type 
+// var-arg method
 class A {
-
-    // Method has class type -> return type
-    A Show () { // class type -> return type
-        System.out.println("Super Class");
-        return this; // we have to return something because not void. this --> new A();
-    }
-}
-
-class B extends A {
-
-    // override method
-    @Override
-    B Show () {
-        System.out.println("Sub Class");
-        return this;
+    void add (int ... a) { // same as spread operator in js
+        int sum = 0;
+        // sum = sum + a; // this will give error, because a is array, now need to traverse.
+        for (int x:a) {
+            sum += x;
+        }
+        System.out.println("Sum of no. is: " + sum);
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        B b = new B();
-        b.Show();
+        A a = new A();
+        a.add();
+        a.add(10);
+        a.add(20, 30);
+        a.add(40, 50, 60);
+        a.add(70, 80, 90, 100);
     }
 }
+
+
+
+// Covarient Return Type 
+// class A {
+
+//     // Method has class type -> return type
+//     A Show () { // class type -> return type
+//         System.out.println("Super Class");
+//         return this; // we have to return something because not void. this --> new A();
+//     }
+// }
+
+// class B extends A {
+
+//     // override method
+//     @Override
+//     B Show () {
+//         System.out.println("Sub Class");
+//         return this;
+//     }
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         B b = new B();
+//         b.Show();
+//     }
+// }
 
 
 
